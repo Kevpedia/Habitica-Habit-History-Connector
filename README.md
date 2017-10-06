@@ -3,6 +3,7 @@ A Data Studio Connector for your Habitica Habits
 
 ## Get Your API User ID and Key
 Log into https://habitica.com and visit https://habitica.com/user/settings/api
+![screenshot](https://raw.githubusercontent.com/Kevpedia/Habitica-Habit-History-Connector/master/habitica-api-screenshot.png "screenshot")
 
 ## Enable the Connector
 ### Testing (QA) Deployment
