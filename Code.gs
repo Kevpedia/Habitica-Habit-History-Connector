@@ -18,7 +18,7 @@ function getConfig(request) {
   return config;
 }
 
-/** Data Schema w/ Samples
+/** Data Schema w/ Sample Values
    * Task Name   Brush teeth
    * Task ID     0d50e4e3-feba-40fb-ba51-f987e9233b0f
    * Task Type   daily
@@ -84,7 +84,7 @@ function getData(request) {
     }
   });
   
-  // Craft URL to fetch weather forecast data using OpenWeatherMap API.
+  // Set URL for Habitica API, history end-point
   var url = "https://habitica.com/export/history.csv";
 
   // Fetch the data.
