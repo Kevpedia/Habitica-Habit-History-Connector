@@ -6,7 +6,7 @@
     "logoUrl": "https://raw.githubusercontent.com/Kevpedia/Habitica-Habit-History-Connector/master/logo%20for%20habitica%20connector.jpg",
     "addonUrl": "https://github.com/Kevpedia/Habitica-Habit-History-Connector",
     "supportUrl": "https://github.com/Kevpedia/Habitica-Habit-History-Connector",
-    "description": "Connect to Habitica and report on your habits!",
+    "description": "Connect to Habitica and report on your habits! Visit https://habitica.com/ to get started",
     "sources": ["Habitica API v3"],
     "templates": {
       "default": "0B-Nb3-Iy-1AsT0MxWGhEMG1TU1U"
