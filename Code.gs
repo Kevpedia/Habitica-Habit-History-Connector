@@ -103,55 +103,81 @@ function getData(request) {
     'method': "get",
     'headers': headers
   }
-  var response = UrlFetchApp.fetch(url, options);
-  var history = response.getContentText();
-  var rows = history.split("\n");
-  rows = rows.filter(function(row, index){
-    if (index!=0) {
-      return row
+  try {
+    var response = UrlFetchApp.fetch(url, options);
+  }
+  catch(e) {
+    if (e.message.search("There is no account that uses those credentials.")!=-1) {
+      logConnectorError(e, 'fetch-error-authorization'); // Log to Stackdriver.
+      throwConnectorError("There is no Habitica account that uses those credentials."
+      + "\nPlease visit https://habitica.com/user/settings/api and Enter the API User ID and Key from there into the connector configuraiton", true);
     }
-  });
-  rows = rows.map(function(row){
-    var values = row.split(",");
-    return {
-      'task_name': values[0],
-      'task_id': values[1],
-      'task_type': values[2],
-      'date': values[3],
-      'value': values[4],
+    else {
+      logConnectorError(e, 'fetch-error-other'); // Log to Stackdriver.
+      throwConnectorError("Unable to Reach the Habitica API. Try again later.", true);
     }
-  });
-
-  // Prepare the tabular data.
-  var data = [];
-  rows.forEach(function(row) {
-    var values = [];
-    // Provide values in the order defined by the schema.
-    dataSchema.forEach(function(field) {
-      switch(field.name) {
-        case 'task_name':
-          values.push(row['task_name']);
-          break;
-        case 'task_id':
-          values.push(row['task_id']);
-          break;
-        case 'task_type':
-          values.push(row['task_type']);
-          break;
-        case 'date':
-          values.push(row['date']);
-          break;
-        case 'value':
-          values.push(row['value']);
-          break;
-        default:
-          values.push('');
+  }
+  
+  try {
+    var history = response.getContentText();
+    var rows = history.split("\n");
+    rows = rows.filter(function(row, index){
+      if (index!=0) {
+        return row
       }
     });
-    data.push({
-      values: values
+    rows = rows.map(function(row){
+      var values = row.split(",");
+      return {
+        'task_name': values[0],
+        'task_id': values[1],
+        'task_type': values[2],
+        'date': values[3],
+        'value': values[4],
+      }
     });
-  });
+  }
+  catch(e) {
+    logConnectorError(e + "\nHistory Response: "+response, 'response-parsing-error'); // Log to Stackdriver.
+    throwConnectorError("We're having some trouble parsing the response from Habitica.com", true);
+  }
+
+  // Prepare the tabular data.
+  try {
+    var data = [];
+    rows.forEach(function(row) {
+      var values = [];
+      // Provide values in the order defined by the schema.
+      dataSchema.forEach(function(field) {
+        switch(field.name) {
+          case 'task_name':
+            values.push(row['task_name']);
+            break;
+          case 'task_id':
+            values.push(row['task_id']);
+            break;
+          case 'task_type':
+            values.push(row['task_type']);
+            break;
+          case 'date':
+            values.push(row['date']);
+            break;
+          case 'value':
+            values.push(row['value']);
+            break;
+          default:
+            values.push('');
+        }
+      });
+      data.push({
+        values: values
+      });
+    });
+  }
+  catch (e) {
+    logConnectorError(e, 'response-formatting-error'); // Log to Stackdriver.
+    throwConnectorError("Unable to process data in required format.", true);
+  }
 
   return {
     schema: dataSchema,
@@ -164,4 +190,36 @@ function getAuthType() {
     "type": "NONE"
   };
   return response;
+}
+
+/**
+  * Throws an error that complies with the community connector spec.
+  * @param {string} message The error message.
+  * @param {boolean} userSafe Determines whether this message is safe to show
+  *     to non-admin users of the connector. true to show the message, false
+  *     otherwise. false by default.
+  */
+function throwConnectorError(message, userSafe) {
+  userSafe = (typeof userSafe !== 'undefined' &&
+              typeof userSafe === 'boolean') ?  userSafe : false;
+  if (userSafe) {
+    message = 'DS_USER:' + message;
+  }
+  
+  throw new Error(message);
+}
+
+/**
+  * Log an error that complies with the community connector spec.
+  * @param {Error} originalError The original error that occurred.
+  * @param {string} message Additional details about the error to include in
+  *    the log entry.
+  */
+function logConnectorError(originalError, message) {
+  var logEntry = [
+    'Original error (Message): ',
+    originalError,
+    '(', message, ')'
+  ];
+  console.error(logEntry.join('')); // Log to Stackdriver.
 }
