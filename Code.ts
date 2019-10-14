@@ -205,7 +205,6 @@ function throwConnectorError(message, userSafe) {
   if (userSafe) {
     message = 'DS_USER:' + message;
   }
-  
   throw new Error(message);
 }
 
@@ -221,5 +220,5 @@ function logConnectorError(originalError, message) {
     originalError,
     '(', message, ')'
   ];
-  console.error(logEntry.join('')); // Log to Stackdriver.
+  console.error(originalError); // Log to Stackdriver.
 }

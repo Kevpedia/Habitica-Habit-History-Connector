@@ -1,9 +1,12 @@
 {
+  "timeZone": "Pacific/Pago_Pago",
+  "dependencies": {
+  },
   "dataStudio": {
     "name": "Habitica Habit History by Kevpedia",
+    "logoUrl": "https://raw.githubusercontent.com/Kevpedia/Habitica-Habit-History-Connector/master/logo%20for%20habitica%20connector.jpg",
     "company": "Kevpedia",
     "companyUrl": "https://github.com/Kevpedia/Habitica-Habit-History-Connector",
-    "logoUrl": "https://raw.githubusercontent.com/Kevpedia/Habitica-Habit-History-Connector/master/logo%20for%20habitica%20connector.jpg",
     "addonUrl": "https://github.com/Kevpedia/Habitica-Habit-History-Connector",
     "supportUrl": "https://github.com/Kevpedia/Habitica-Habit-History-Connector",
     "description": "Connect to Habitica and report on your habits! Visit https://habitica.com/ to get started",
