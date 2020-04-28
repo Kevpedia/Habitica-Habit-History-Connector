@@ -1,3 +1,4 @@
+<meta name="google-site-verification" content="iuEUvefOqGFu2F0xhkTa3BPC_JpdpAgImqubD9WaNoo" />
 # Habitica-Habit-History-Connector
 
 A Data Studio Connector for your Habitica Habits
