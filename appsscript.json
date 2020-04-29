@@ -9,7 +9,6 @@
     "addonUrl": "https://kevpedia.github.io/Habitica-Habit-History-Connector/",
     "supportUrl": "https://kevpedia.github.io/Habitica-Habit-History-Connector/",
     "description": "Connect to Habitica and report on your habits! Visit https://habitica.com/ to get started",
-    "sources": ["https://habitica.com/export/history.csv"],
     "templates": {
       "default": "0B-Nb3-Iy-1AsT0MxWGhEMG1TU1U"
     }
