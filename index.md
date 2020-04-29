@@ -21,3 +21,7 @@ https://datastudio.google.com/datasources/create?connectorId=AKfycbwVWBHo7E6LVKx
 ## Configure the Connector
 
 Add the API User ID and Key obtained in the first step above and click 'Connect'
+
+---
+
+[privacy policy](https://kevpedia.github.io/Habitica-Habit-History-Connector/privacy-policy)

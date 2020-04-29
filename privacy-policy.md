@@ -6,3 +6,7 @@ This connector, itself, will not store any of it's users' data. As such, I will 
 
 - [Google Data Studio Privacy Policy](https://policies.google.com/privacy)
 - [Habitica Privacy Policy](https://habitica.com/static/privacy)
+
+---
+
+[home](https://kevpedia.github.io/Habitica-Habit-History-Connector)
