@@ -25,3 +25,4 @@ Add the API User ID and Key obtained in the first step above and click 'Connect'
 ---
 
 [privacy policy](https://kevpedia.github.io/Habitica-Habit-History-Connector/privacy-policy)
+[terms and conditions](https://kevpedia.github.io/Habitica-Habit-History-Connector/terms)

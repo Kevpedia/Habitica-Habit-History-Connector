@@ -14,3 +14,4 @@ Please note to the privacy policies of (A) Google Data Studio (the platform on w
 ---
 
 [home](https://kevpedia.github.io/Habitica-Habit-History-Connector)
+[privacy policy](https://kevpedia.github.io/Habitica-Habit-History-Connector/privacy-policy)

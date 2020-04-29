@@ -14,3 +14,4 @@ This GitHub Pages site includes a Google Analytics tag to measure the number of 
 ---
 
 [home](https://kevpedia.github.io/Habitica-Habit-History-Connector)
+[terms and conditions](https://kevpedia.github.io/Habitica-Habit-History-Connector/terms)
