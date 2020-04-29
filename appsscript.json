@@ -12,6 +12,7 @@
     "description": "Connect to Habitica and report on your habits! Visit https://habitica.com/ to get started",
     "shortDescription": "Connect to Habitica and report on your habits!",
     "authType": ["KEY"],
+    "feeType": ["FREE"],
     "templates": {
       "default": "0B-Nb3-Iy-1AsT0MxWGhEMG1TU1U"
     }
