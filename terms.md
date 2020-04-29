@@ -8,8 +8,8 @@ The author makes this connector available on the [Google Data Studio partner con
 
 Please note to the privacy policies of (A) Google Data Studio (the platform on which this connector is used) and (B) Habitica (the platform which this connector queries). Use of this connector constitutes agreement to those platforms' terms and conditions as well.
 
-- [Google Privacy Policy](https://policies.google.com/privacy)
-- [Habitica Privacy Policy](https://habitica.com/static/privacy)
+- [Google Privacy Policy](https://support.google.com/datastudio/answer/7019158?hl=en)
+- [Habitica Privacy Policy](https://habitica.com/static/terms)
 
 ---
 
