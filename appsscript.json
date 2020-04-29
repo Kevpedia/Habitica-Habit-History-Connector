@@ -11,6 +11,7 @@
     "privacyPolicyUrl": "https://kevpedia.github.io/Habitica-Habit-History-Connector/privacy-policy?utm_source=connector&utm_medium=manifest&utm_content=privacyPolicyUrl",
     "description": "Connect to Habitica and report on your habits! Visit https://habitica.com/ to get started",
     "shortDescription": "Connect to Habitica and report on your habits!",
+    "authType": ["KEY"],
     "templates": {
       "default": "0B-Nb3-Iy-1AsT0MxWGhEMG1TU1U"
     }
